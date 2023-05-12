@@ -1,0 +1,304 @@
+#track_list {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1em 0
+}
+
+#track_list .song {
+  gap: 10px;
+  display: flex;
+  height: 4.8em;
+  max-width: 1000px;
+  padding: 0 .3em;
+  margin: 10px auto;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer
+}
+
+#track_list .song img {
+  height: 100%;
+  object-fit: cover;
+  margin: 0 10px;
+  border-radius: 5px
+}
+
+#track_list .song .description {
+  flex-grow: 1
+}
+
+#header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #350C40;
+  z-index: 10
+}
+
+@media(max-width: 992px) {
+  #header {
+      background-color:#350C40;
+      position: absolute;
+      transition: all .6s ease;
+      top: 0;
+      left: -100vw
+  }
+
+  #header.visible {
+      left: 0
+  }
+}
+
+h1.title {
+  text-align: center;
+  margin: 5vh 0;
+}
+
+nav.navbar {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+nav.navbar ul.list {
+  margin: 1.3em 0;
+  padding-left: 2em
+}
+
+nav.navbar ul.list li {
+  cursor: pointer;
+  height: 2em;
+  padding: .1em;
+  margin: .3em auto;
+  display: flex;
+  align-items: center;
+  gap: 1.4em
+}
+
+nav.navbar ul.list li img {
+  height: 100%;
+  object-fit: cover
+}
+
+nav.navbar ul.list li span {
+  font-size: 1.3rem;
+  width: max-content
+}
+
+.options {
+  border-radius: 10px 10px 0 0;
+  background-color: #350C40;
+  height: 100%;
+  display: flex;
+  flex-direction: column
+}
+
+#current_song {
+  background-color: #071126;
+  width: 100%;
+  display: flex
+}
+
+#current_song .song {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  height: 4.8em;
+  margin: 10px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default
+}
+
+@media(max-width: 576px) {
+  #current_song .song {
+      flex-wrap:wrap;
+      height: auto
+  }
+
+  #current_song .song audio::-webkit-media-control {
+      width: 100%
+  }
+}
+
+#current_song .song img {
+  height: 100%;
+  object-fit: cover;
+  margin: 0 10px;
+  border-radius: 5px
+}
+
+@media(max-width: 576px) {
+  #current_song .song img {
+      display:none
+  }
+}
+
+#current_song .song .description {
+  flex-grow: 1
+}
+
+#background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100
+}
+::-webkit-scrollbar {
+  width: 10px
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px
+}
+
+::-webkit-scrollbar-thumb {
+  background: #200726;
+  border-radius: 10px
+}
+
+#responsive_menu {
+  display: none;
+  position: relative;
+  background-color: #071126;
+  z-index: 100;
+  height: 100%;
+  width: 50px
+}
+
+@media(max-width: 992px) {
+  #responsive_menu {
+      display:block
+  }
+}
+
+#responsive_menu img {
+  width: 100%;
+  padding: 5px
+}
+
+#loader {
+  margin: 25vh auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  border: 3px solid;
+  border-color: #fff #fff rgba(0,0,0,0) rgba(0,0,0,0);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite
+}
+
+#loader::after,#loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: rgba(0,0,0,0) rgba(0,0,0,0) #2317c4 #0d38c5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack .5s linear infinite;
+  transform-origin: center center
+}
+
+#loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #fff #fff rgba(0,0,0,0) rgba(0,0,0,0);
+  animation: rotation 1.5s linear infinite
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg)
+  }
+
+  100% {
+      transform: rotate(360deg)
+  }
+}
+
+@keyframes rotationBack {
+  0% {
+      transform: rotate(0deg)
+  }
+
+  100% {
+      transform: rotate(-360deg)
+  }
+}
+
+*,*::after,*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu","Segoe UI",sans-serif;
+  color: #fff;
+  outline: none
+}
+
+html {
+  font-size: 16px
+}
+
+@media(max-width: 576px) {
+  html {
+      font-size:14px
+  }
+}
+
+body {
+  overflow: hidden;
+  background-color: #9d13c0;
+  height: 100vh
+}
+
+main#main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #200726
+}
+
+main#main h2.title {
+  padding: 1em;
+  padding-bottom: 0
+}
+
+hr {
+  margin: .7em 0;
+  border: none;
+  height: 2px;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #350C40), rgba(0, 0, 0, 0)
+}
+
+#app {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100vh
+}
+
+.container {
+  padding: 1.3em 0;
+  margin: 0 auto
+}
+
+.relative {
+  position: relative
+}

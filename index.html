@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frecuencia Web Music Player</title>
+  <link rel="icon" href="/public/img/Logo.svg">
+  <link rel="stylesheet" href="/src/styles/style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="background">
+      <img src="/public/img/Logo.svg" alt="Background Desing">
+    </div>
+    <div class="relative">
+      <header id="header">
+        <div class="container">
+          <h1 class="title">Frecuencia Web Music Player</h1>
+        </div>
+        <div class="options">
+          <nav class="navbar">
+            <ul class="list">
+              <li>
+                <span>Inicio</span>
+              </li>
+              <li>
+                <span>Buscar</span>
+              </li>
+              <li>
+                <span> Biblioteca</span>
+              </li>
+            </ul>
+            <ul class="list">
+              <li>
+                <span>Me gusta</span>
+              </li>
+              <li>
+                <span> Playlist</span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <main id="main">
+      <h2 class="title">
+        Lista de Reproducción
+        <hr>
+      </h2>
+      <div id="track_list">
+        <span id="loader"></span>
+      </div>
+      <div id="current_song">
+      </div>
+    </main>
+  </div>
+</body>
+<script type="module" src="./main.js"></script>
+</html>
